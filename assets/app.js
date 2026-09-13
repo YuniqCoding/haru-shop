@@ -138,13 +138,17 @@ function paintCheckout() {
   const form = document.querySelector("#pay-form");
   if (!form) return;
 
+  // ▼ 여기에 「결제를 시작했다」를 알리는 코드가 들어갑니다 (뒤 수업에서)
+  //   결제 화면이 열린 순간입니다
+
   const sum = document.querySelector("#pay-total");
   if (sum) sum.textContent = won(Cart.total());
 
   form.addEventListener("submit", e => {
     e.preventDefault();
 
-    // ▼ 여기에 「결제를 시작했다」를 알리는 코드가 들어갑니다 (뒤 수업에서)
+    // ▼ 여기에 「결제를 마쳤다」를 알리는 코드가 들어갑니다 (뒤 수업에서)
+    //   장바구니를 비우기 전이라 무엇을 샀는지 아직 읽을 수 있습니다
 
     Cart.clear();
     location.href = "done.html";
